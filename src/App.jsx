@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import OurTeam from './pages/OurTeam';
+import './App.css';
+
 
 function App() {
   return (

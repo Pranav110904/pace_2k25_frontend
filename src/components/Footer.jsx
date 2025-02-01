@@ -2,6 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
+
     <div>
          <footer class="bg-black text-white font-[Genos] py-4">
         <div class="container mx-auto px-4">
@@ -44,6 +45,8 @@ const Footer = () => {
         </div>
     </footer>
     </div>
+
+  
   )
 }
 
