@@ -1,24 +1,75 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import Hamburger from "/icon-menu.svg";
+import Close from "/icon-close-menu.svg";
+import autoAnimate from "@formkit/auto-animate";
+import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);
+
+  const handleMenu = () => {
+    setToggleMenu(!toggleMenu);
+  };
 
   return (
-    <nav className="bg-blue-600 p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-2xl font-bold">PACE 2K25</div>
-        <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X className="text-white" /> : <Menu className="text-white" />}
-        </div>
-        <ul className={`md:flex space-x-6 text-white ${isOpen ? 'block' : 'hidden'} md:block`}>
-          <li><a href="#home" className="hover:text-gray-300">Home</a></li>
-          <li><a href="#events" className="hover:text-gray-300">Events</a></li>
-          <li><a href="#about" className="hover:text-gray-300">About</a></li>
-          <li><a href="#contact" className="hover:text-gray-300">Contact</a></li>
-        </ul>
+    <div className="">
+      <div className="container relative py-5 bg-transparent">
+        <nav className="flex items-center justify-between bg-transparent">
+          {/* Logo */}
+          <h1 className="text-2xl font-bold cursor-pointer text-white ml-4">
+            AIT SPORTS CLUB
+          </h1>
+          
+          {/* Centered Nav Items */}
+          <div className="flex items-center justify-center gap-10">
+            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
+              Brochure
+            </p>
+            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
+              Rulebook
+            </p>
+            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
+              Team
+            </p>
+            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
+              Contact Us
+            </p>
+          </div>
+
+          {/* Register Button */}
+          <div className="flex gap-10 mr-4">
+            <button className="hidden px-4 py-2 text-sm duration-75 border-2 rounded-lg md:block border-white text-MediumGray hover:text-AlmostBlack hover:border-white">
+              Register Now
+            </button>
+          </div>
+
+          {/* Mobile menu */}
+          <div className="md:hidden">
+            <div className="absolute top-0 z-50 text-2xl right-5" ref={parent}>
+              <div onClick={handleMenu}>
+                {toggleMenu ? <img src={Close} /> : <img src={Hamburger} />}
+              </div>
+            </div>
+
+            {/* Mobile navbar */}
+            <div className="absolute right-0 top-5">
+              {toggleMenu ? (
+                <>
+                  <MobileNavbar />
+                </>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   );
 };
 
