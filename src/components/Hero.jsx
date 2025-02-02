@@ -29,23 +29,24 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative bg-black text-white h-screen flex items-center justify-center overflow-hidden"
+      className="relative bg-black hero-container text-white h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
 
+      {/* Cricket and Football Images */}
       <img
         src={cricket}
         alt="Cricketer"
         className={`absolute left-[10%] bottom-25 w-1/6 z-10 transform transition-transform duration-1000 ${
           isVisible ? "translate-x-0" : "-translate-x-full"
-        }`}
+        } hidden md:block`} // Hide on mobile/tablet (using md:block to show on desktop)
       />
       <img
         src={football}
         alt="Footballer"
         className={`absolute right-[10%] bottom-27 w-1/6 z-10 transform transition-transform duration-1000 ${
           isVisible ? "translate-x-0" : "translate-x-full"
-        }`}
+        } hidden md:block`} // Hide on mobile/tablet (using md:block to show on desktop)
       />
 
       <div className="relative text-center z-20">
@@ -100,6 +101,43 @@ const Hero = () => {
           2024-25
         </button>
       </div>
+
+      {/* Add media queries for responsive design */}
+      <style jsx>{`
+        /* Tablet View */
+        @media (max-width: 1024px) {
+          .absolute {
+            position: absolute;
+          }
+          .w-1\\/6 {
+            width: 10%;
+          }
+          .text-[200px] {
+            font-size: 150px;
+          }
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+          .w-1\\/6 {
+            width: 50%;
+          }
+          .text-[200px] {
+            font-size: 120px;
+          }
+          .w-[90%] {
+            width: 100%;
+          }
+
+        }
+          /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const Sponsors = () => {
   return (
     <div
       ref={ref}
-      className="bg-black text-white py-10 px-4 w-full overflow-hidden"
+      className="bg-black text-white hero3-container py-10 px-4 w-full overflow-hidden"
     >
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
@@ -70,6 +70,15 @@ const Sponsors = () => {
           </motion.div>
         ))}
       </div>
+      <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero3-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

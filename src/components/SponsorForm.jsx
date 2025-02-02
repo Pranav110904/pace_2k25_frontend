@@ -2,7 +2,7 @@ import React from "react";
 
 const SponsorForm = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-black px-4">
+    <div className="flex flex-col  hero4-container justify-center items-center min-h-screen bg-black px-4">
       {/* Title Outside the Form */}
       <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-[Heavitas]" >
         WANT TO 
@@ -54,6 +54,15 @@ const SponsorForm = () => {
           </div>
         </form>
       </div>
+      <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero4-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Countdown/>
       <About />
+      <Countdown/>
       <EventSlider/>
       <Sponsors />
       <SponsorForm/>

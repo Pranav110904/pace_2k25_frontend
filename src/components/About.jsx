@@ -42,7 +42,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-black text-white px-10 py-16 relative overflow-hidden">
+    <section className="bg-black text-white px-10 py-16  hero2-container relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <h2
           ref={headingRef}
@@ -58,19 +58,19 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-10">
           <div
-    
             className={`text-lg leading-relaxed font-[Genos] transition-transform duration-1000 ease-in-out`}
           >
             <p>
-              The annual sports fest of <b>ARMY INSTITUTE of TECHNOLOGY, PUNE</b> is one of the largest of
+              The annual sports fest of{" "}
+              <b>ARMY INSTITUTE of TECHNOLOGY, PUNE</b> is one of the largest of
               its kind in <b>PUNE</b> and an energy-packed event.
             </p>
             <br />
             <p>
               Colleges from all over Pune participate in the fest every year
-              with more than <b>4000 participants</b> taking part. Teams from prestigious
-              institutes like <b>AFMC, CME, NDA, BEG, INA</b> also grace the event while
-              competing fiercely.
+              with more than <b>4000 participants</b> taking part. Teams from
+              prestigious institutes like <b>AFMC, CME, NDA, BEG, INA</b> also
+              grace the event while competing fiercely.
             </p>
             <br />
             <p>
@@ -83,7 +83,6 @@ const About = () => {
 
           {/* Image Grid */}
           <div
-        
             className={`grid grid-cols-2 gap-4 p-4 rounded-lg transition-transform duration-1000 ease-in-out relative`}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-[#001E3A] to-[#80C2FF] opacity-80"></div>
@@ -113,6 +112,15 @@ const About = () => {
 
       {/* Bottom Gradient - Full Width */}
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-[#001E3A] to-[#80C2FF] blur-2xl opacity-30"></div>
+      <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero2-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </section>
   );
 };

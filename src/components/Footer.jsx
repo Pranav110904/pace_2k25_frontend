@@ -4,7 +4,7 @@ const Footer = () => {
   return (
 
     <div>
-         <footer class="bg-black text-white font-[Genos] py-4">
+         <footer class="bg-black hero3-container text-white font-[Genos] py-4">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
                 
@@ -43,6 +43,15 @@ const Footer = () => {
         <div class="  text-center text-xs mt-4 text-gray-400">
             © 2025 PACE | Organized by AIT SPORTS CLUB
         </div>
+        <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero3-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </footer>
     </div>
 
