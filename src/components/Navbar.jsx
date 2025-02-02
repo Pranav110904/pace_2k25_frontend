@@ -3,8 +3,8 @@ import Hamburger from "/icon-menu.svg";
 import Close from "/icon-close-menu.svg";
 import autoAnimate from "@formkit/auto-animate";
 import MobileNavbar from "./MobileNavbar";
-
 import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -27,21 +27,33 @@ const Navbar = () => {
           </h1>
 
           <div className="hidden md:flex items-center justify-center gap-10">
-            <p className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300">
+            <a
+              href="#"
+              className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+            >
               Brochure
-            </p>
-            <p className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300">
+            </a>
+            <a
+              href="#"
+              className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+            >
               Rulebook
-            </p>
+            </a>
 
             <span className="text-white mx-4">|</span>
 
-            <p className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300">
+            <a
+              href="#"
+              className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+            >
               Team
-            </p>
-            <p className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300">
+            </a>
+            <a
+              href="https://linktr.ee/pace2025"
+              className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+            >
               Contact Us
-            </p>
+            </a>
           </div>
 
           <div className="hidden md:flex items-center mr-4">

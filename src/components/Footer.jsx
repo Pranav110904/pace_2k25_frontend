@@ -17,7 +17,7 @@ const Footer = () => {
                     <a href="#" class="hover:text-gray-300">Home</a>
                     <a href="#" class="hover:text-gray-300">Brochure</a>
                     <a href="#" class="hover:text-gray-300">Rulebook</a>
-                    <a href="#" class="hover:text-gray-300">Contact US</a>
+                    <a href="https://linktr.ee/pace2025" class="hover:text-gray-300">Contact US</a>
                 </div>
 
                 
