@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from "react";
+import Hamburger from "/icon-menu.svg";
+import Close from "/icon-close-menu.svg";
+import autoAnimate from "@formkit/auto-animate";
+import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);
+
+  const handleMenu = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
   return (
     <div className="bg-black">
       <div className="container mx-auto relative py-5">
