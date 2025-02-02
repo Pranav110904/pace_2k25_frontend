@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import cricket from "../assets/cricket.png";
 import football from "../assets/football.png";
+import logo from "../assets/paceLogo.png"; // Import the logo
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,26 +36,35 @@ const Hero = () => {
       <img
         src={cricket}
         alt="Cricketer"
-        className={`absolute left-70 bottom-25 w-1/6 z-10 transform transition-transform duration-1000 ${
+        className={`absolute left-[10%] bottom-25 w-1/6 z-10 transform transition-transform duration-1000 ${
           isVisible ? "translate-x-0" : "-translate-x-full"
         }`}
       />
       <img
         src={football}
         alt="Footballer"
-        className={`absolute right-70 bottom-27 w-1/6 z-10 transform transition-transform duration-1000 ${
+        className={`absolute right-[10%] bottom-27 w-1/6 z-10 transform transition-transform duration-1000 ${
           isVisible ? "translate-x-0" : "translate-x-full"
         }`}
       />
 
       <div className="relative text-center z-20">
+        {/* Background Logo Image (Further Increased Size) */}
+        <img
+          src={logo}
+          alt="PACE Logo"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] opacity-15 z-0" // Increased size further
+        />
+
+        {/* PACE Text */}
         <h1
-          className={`text-[200px] font-bold font-[Genos] tracking-wide uppercase transition-opacity duration-1000 ${
+          className={`relative text-[200px] font-bold font-[Genos] tracking-wide uppercase transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            color: "transparent", // Makes fill transparent
-            WebkitTextStroke: "2px white", // Stroke effect for text
+            color: "transparent",
+            WebkitTextStroke: "2px white",
+            zIndex: 10, // Ensures text is above the logo
           }}
         >
           PACE
@@ -64,15 +74,14 @@ const Hero = () => {
         <button
           className="relative mt-3 text-xl font-semibold px-16 py-4 rounded-full text-white"
           style={{
-            background: "rgba(0, 8, 16, 0.2)", // More transparent for glass effect
-            backdropFilter: "blur(10px)", // Frosted glass blur effect
-            WebkitBackdropFilter: "blur(10px)", // Safari support
+            background: "rgba(0, 8, 16, 0.2)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
             position: "relative",
             overflow: "hidden",
             border: "none",
           }}
         >
-          {/* Border effect */}
           <span
             style={{
               content: '""',
