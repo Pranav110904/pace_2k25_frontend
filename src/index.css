@@ -4,3 +4,24 @@
 
 @import "tailwindcss";
 
+body {
+    @apply bg-black min-h-screen min-w-[320px];
+  }
+  
+  .swiper-slide {
+    @apply w-[450px] h-[600px] transition-transform duration-300 scale-75 opacity-50;
+  }
+  
+  .swiper-slide-active {
+    @apply scale-100 opacity-100;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-white bg-black/50 w-[40px] h-[40px] rounded-full;
+  }
+  
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    @apply text-xl;
+  }
