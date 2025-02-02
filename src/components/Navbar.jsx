@@ -4,7 +4,9 @@ import Close from "/icon-close-menu.svg";
 import autoAnimate from "@formkit/auto-animate";
 import MobileNavbar from "./MobileNavbar";
 
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = useState(false);
   const parent = useRef(null);
 
@@ -24,7 +26,6 @@ const Navbar = () => {
             AIT SPORTS CLUB
           </h1>
 
-         
           <div className="hidden md:flex items-center justify-center gap-10">
             <p className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300">
               Brochure
@@ -33,7 +34,6 @@ const Navbar = () => {
               Rulebook
             </p>
 
-     
             <span className="text-white mx-4">|</span>
 
             <p className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300">
@@ -44,23 +44,31 @@ const Navbar = () => {
             </p>
           </div>
 
-    
           <div className="hidden md:flex items-center mr-4">
-            <button className="px-4 py-2 text-sm border-2 font-[Genos] rounded-lg border-white text-white hover:text-black hover:bg-white cursor-pointer">
+            <button
+              className="px-4 py-2 text-sm border-2 font-[Genos] rounded-lg border-white text-white hover:text-black hover:bg-white cursor-pointer"
+              onClick={() => navigate("/register")}
+            >
               Register Now
             </button>
           </div>
 
-     
           <div className="md:hidden">
             <div className="absolute top-0 z-50 text-2xl right-5" ref={parent}>
               <div onClick={handleMenu} className="cursor-pointer">
-                {toggleMenu ? <img src={Close} alt="Close Menu" /> : <img src={Hamburger} alt="Open Menu" />}
+                {toggleMenu ? (
+                  <img src={Close} alt="Close Menu" />
+                ) : (
+                  <img src={Hamburger} alt="Open Menu" />
+                )}
               </div>
             </div>
 
-        
-            <div className={`absolute right-0 top-14 transition-all duration-300 ${toggleMenu ? "block" : "hidden"}`}>
+            <div
+              className={`absolute right-0 top-14 transition-all duration-300 ${
+                toggleMenu ? "block" : "hidden"
+              }`}
+            >
               {toggleMenu && <MobileNavbar />}
             </div>
           </div>

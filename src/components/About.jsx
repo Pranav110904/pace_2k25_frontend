@@ -58,12 +58,8 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-10">
           <div
-            ref={textRef}
-            className={`text-lg leading-relaxed font-[Genos] transition-transform duration-1000 ease-in-out ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-20 opacity-0"
-            }`}
+    
+            className={`text-lg leading-relaxed font-[Genos] transition-transform duration-1000 ease-in-out`}
           >
             <p>
               The annual sports fest of <b>ARMY INSTITUTE of TECHNOLOGY, PUNE</b> is one of the largest of
@@ -87,12 +83,8 @@ const About = () => {
 
           {/* Image Grid */}
           <div
-            ref={imagesRef}
-            className={`grid grid-cols-2 gap-4 p-4 rounded-lg transition-transform duration-1000 ease-in-out relative ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-20 opacity-0"
-            }`}
+        
+            className={`grid grid-cols-2 gap-4 p-4 rounded-lg transition-transform duration-1000 ease-in-out relative`}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-[#001E3A] to-[#80C2FF] opacity-80"></div>
             <img
