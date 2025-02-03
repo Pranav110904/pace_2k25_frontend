@@ -3,26 +3,33 @@ import { Navigation, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import cricket from "../assets/cricket2.png";
+import volley from "../assets/volleyball.png";
 import football from "../assets/football.png";
-import volleyball from "../assets/volley.png";
-import basketball from "../assets/basket.png";
+import basketball from "../assets/basketball.png";
+import squash from "../assets/squash.png";
+import lawnTennis from "../assets/lawn tennis.png";
+import tableTennis from "../assets/tt.png";
+import badminton from "../assets/badminton.png";
+import chess from "../assets/chess.png";
+import kabaddi from "../assets/kabaddi.png";
+import cricket from "../assets/cricket2.png";
+
 const events = [
   {
     id: 1,
     title: "VOLLEYBALL",
-    image: volleyball,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    image: volley,
+    categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
+    prices: ["","","","", "₹2000/-", "₹1400/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
   {
     id: 2,
-    title: "CRICKET",
-    image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    title: "KABADDI",
+    image: kabaddi,
+    categories: ["ENTRY FEE","MEN"],
+    prices: ["","","₹2000/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -30,8 +37,8 @@ const events = [
     id: 3,
     title: "FOOTBALL",
     image: football,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    categories: ["ENTRY FEE", "","MEN-6", "MEN-11", "WOMEN"],
+    prices: ["","","","","", "₹1500/-", "₹3000/-","₹1000/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -39,71 +46,72 @@ const events = [
     id: 4,
     title: "BASKETBALL",
     image: basketball,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
+    prices: ["","","","", "₹2500/-", "₹1500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
   {
     id: 5,
-    title: "KABADDI",
+    title: "CRICKET",
     image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
+    prices: ["","","","", "₹3500/-", "₹1500/-"],
     bgGradient:
-      "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
+      "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
+    
   },
   {
     id: 6,
     title: "SQUASH",
-    image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    image: squash,
+    categories: ["ENTRY FEE", "", "MEN-S", "WOMEN-S","MEN-D"],
+    prices: ["","","","","₹300/-", "₹300/-", "₹600/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
   {
     id: 7,
     title: "LAWN TENNIS",
-    image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    image: lawnTennis,
+    categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
+    prices: ["","","", "₹400/-", "₹200/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
   {
     id: 8,
     title: "TABLE TENNIS",
-    image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    image: tableTennis,
+    categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
+    prices: ["","","", "₹800/-", "₹600/-"],
     bgGradient:
-      "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
+      "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
   {
     id: 9,
     title: "BADMINTON",
-    image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    image: badminton,
+    categories: ["ENTRY FEE", "", "MEN", "WOMEN", "MIXED"],
+    prices: ["","","","","","", "₹1300/-", "₹900/-", "₹500/-"],
     bgGradient:
-      "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
+      "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
   {
     id: 10,
     title: "CHESS",
-    image: cricket,
-    categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
+    image: chess,
+    categories: ["ENTRY FEE", "", "MEN-T", "WOMEN-I"],
+    prices: ["","","", "₹600/-", "₹100/-"],
     bgGradient:
-      "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
+      "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
 ];
 
 function EventSlider() {
   return (
-    <div className="min-h-screen bg-black p-8 fl hero8-container ex flex-col items-center">
-      <h1 className="text-5xl font-bold text-white mb-8">MAJOR EVENTS</h1>
+    <div className="min-h-screen bg-black p-8 flex flex-col items-center">
+      <h1 className="items-center text-5xl font-bold text-white mb-8">MAJOR EVENTS</h1>
 
       <Swiper
         effect={"coverflow"}
@@ -148,7 +156,7 @@ function EventSlider() {
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-[250px] h-[250px] object-contain mb-8 rounded-md"
+                  className="w-50 h-60 mb-12 object-contain"
                 />
 
                 {/* Event Details */}
@@ -176,15 +184,6 @@ function EventSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <style jsx>{`
-        /* Phone View (Below 500px) */
-        @media (max-width: 500px) {
-          .hero8-container {
-            width: 150%;
-            height: 200%;
-          }
-        }
-      `}</style>
     </div>
   );
 }
