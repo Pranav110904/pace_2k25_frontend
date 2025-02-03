@@ -25,7 +25,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="font-[Genos] bg-black flex flex-col  justify-center items-center">
+    <div className="font-[Genos] bg-black flex flex-col  hero5-container justify-center items-center">
       <h2 className="text-white text-4xl font-bold mb-6">Pace 2K25</h2>
       <div className="flex justify-center items-center gap-6 bg-black border-2 border-blue-200 bg-opacity-30 backdrop-blur-md rounded-lg p-8 shadow-lg">
         <div className="flex flex-col items-center text-white">
@@ -51,7 +51,7 @@ const Countdown = () => {
       <style jsx>{`
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
-          .hero3-container {
+          .hero5-container {
             width: 150%;
             height: 200%;
           }

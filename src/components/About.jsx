@@ -85,7 +85,7 @@ const About = () => {
           <div
             className={`grid grid-cols-2 gap-4 p-4 rounded-lg transition-transform duration-1000 ease-in-out relative`}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-[#001E3A] to-[#80C2FF] opacity-80"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-[#001E3A] to-[#80C2FF] opacity-80"></div> */}
             <img
               src={home1}
               alt="Sports Image 1"

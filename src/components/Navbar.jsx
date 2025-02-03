@@ -1,28 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import Hamburger from "/icon-menu.svg";
-import Close from "/icon-close-menu.svg";
-import autoAnimate from "@formkit/auto-animate";
-import MobileNavbar from "./MobileNavbar";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const parent = useRef(null);
-
-  useEffect(() => {
-    parent.current && autoAnimate(parent.current);
-  }, [parent]);
-
-  const handleMenu = () => {
-    setToggleMenu(!toggleMenu);
-  };
 
   return (
     <div className="bg-black">
-      <div className="container mx-auto relative py-5">
+      <div className="container mx-auto relative py-5 px-4">
         <nav className="flex items-center justify-between bg-transparent">
-          <h1 className="text-2xl font-bold cursor-pointer text-white ml-4">
+          <h1 className="text-2xl font-bold cursor-pointer text-white">
             AIT SPORTS CLUB
           </h1>
 
@@ -39,9 +25,7 @@ const Navbar = () => {
             >
               Rulebook
             </a>
-
             <span className="text-white mx-4">|</span>
-
             <a
               href="#"
               className="text-xl font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
@@ -56,7 +40,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="hidden md:flex items-center mr-4">
+          <div className="hidden md:flex items-center">
             <button
               className="px-4 py-2 text-sm border-2 font-[Genos] rounded-lg border-white text-white hover:text-black hover:bg-white cursor-pointer"
               onClick={() => navigate("/register")}
@@ -64,27 +48,41 @@ const Navbar = () => {
               Register Now
             </button>
           </div>
-
-          <div className="md:hidden">
-            <div className="absolute top-0 z-50 text-2xl right-5" ref={parent}>
-              <div onClick={handleMenu} className="cursor-pointer">
-                {toggleMenu ? (
-                  <img src={Close} alt="Close Menu" />
-                ) : (
-                  <img src={Hamburger} alt="Open Menu" />
-                )}
-              </div>
-            </div>
-
-            <div
-              className={`absolute right-0 top-14 transition-all duration-300 ${
-                toggleMenu ? "block" : "hidden"
-              }`}
-            >
-              {toggleMenu && <MobileNavbar />}
-            </div>
-          </div>
         </nav>
+
+        {/* Mobile & Tablet View */}
+        <div className="md:hidden flex flex-col items-center gap-4 mt-4">
+          <a
+            href="#"
+            className="text-lg font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+          >
+            Brochure
+          </a>
+          <a
+            href="#"
+            className="text-lg font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+          >
+            Rulebook
+          </a>
+          <a
+            href="#"
+            className="text-lg font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+          >
+            Team
+          </a>
+          <a
+            href="https://linktr.ee/pace2025"
+            className="text-lg font-medium cursor-pointer font-[Genos] text-white hover:text-gray-300"
+          >
+            Contact Us
+          </a>
+          <button
+            className="px-4 py-2 text-sm border-2 font-[Genos] rounded-lg border-white text-white hover:text-black hover:bg-white cursor-pointer"
+            onClick={() => navigate("/register")}
+          >
+            Register Now
+          </button>
+        </div>
       </div>
     </div>
   );

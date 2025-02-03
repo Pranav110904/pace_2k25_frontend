@@ -36,36 +36,27 @@ const Sponsors = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
         {sponsors.map((sponsor, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.8, delay: index * 0.2, ease: "easeInOut" }}
-            className="relative h-60 sm:h-52 md:h-64 w-full flex flex-col justify-end rounded-2xl shadow-lg bg-gradient-to-br from-gray-900 to-black"
+            className="relative h-48 sm:h-56 md:h-64 w-full sm:w-64 md:w-72 flex flex-col justify-end rounded-2xl shadow-lg bg-gradient-to-br from-gray-900 to-black"
             style={{
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5), inset 0 4px 6px rgba(255, 255, 255, 0.1)",
               clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             }}
           >
-            <div className={`absolute bottom-0 left-0 right-0 flex justify-center items-center h-14 ${sponsor.color} rounded-b-xl`}>
-              <p className="text-white font-semibold font-[Genos] text-lg">
+            <div className={`absolute bottom-0 left-0 right-0 flex justify-center items-center h-12 ${sponsor.color} rounded-b-xl`}>
+              <p className="text-white font-semibold font-[Genos] text-sm sm:text-lg">
                 {sponsor.name}
               </p>
             </div>
           </motion.div>
         ))}
       </div>
-
-      <style jsx>{`
-        @media (max-width: 500px) {
-          .hero3-container {
-            width: 100%;
-            height: auto;
-          }
-        }
-      `}</style>
     </div>
   );
 };
