@@ -10,10 +10,9 @@ const Sponsors = () => {
     { name: "GHI", color: "bg-green-500" },
   ];
 
-  // trigger animation whenever the section is in view
   const { ref, inView } = useInView({
-    triggerOnce: false, // Allow animation to trigger every time the section is in view
-    threshold: 0.5, // 50% visibility to trigger the animation
+    triggerOnce: false,
+    threshold: 0.5,
   });
 
   return (
@@ -23,10 +22,7 @@ const Sponsors = () => {
     >
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
-        animate={{
-          x: inView ? 0 : -100,
-          opacity: inView ? 1 : 0,
-        }}
+        animate={{ x: inView ? 0 : -100, opacity: inView ? 1 : 0 }}
         transition={{ duration: 1 }}
         className="text-center text-5xl font-bold font-[Genos] mb-8"
       >
@@ -40,42 +36,33 @@ const Sponsors = () => {
         </button>
       </div>
 
-      <div className="flex justify-between flex-wrap w-full space-y-4 md:space-y-0 md:space-x-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
         {sponsors.map((sponsor, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={
-              inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }
-            } // Reset to initial state when out of view
-            transition={{
-              duration: 0.8,
-              delay: index * 0.2,
-              ease: "easeInOut", // Added easing for smooth transitions
-            }}
-            className="relative h-80 w-full md:w-[18%] flex flex-col justify-end rounded-3xl shadow-lg bg-gradient-to-br from-gray-900 to-black"
+            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+            transition={{ duration: 0.8, delay: index * 0.2, ease: "easeInOut" }}
+            className="relative h-60 sm:h-52 md:h-64 w-full flex flex-col justify-end rounded-2xl shadow-lg bg-gradient-to-br from-gray-900 to-black"
             style={{
-              boxShadow:
-                "0 4px 6px rgba(0, 0, 0, 0.5), inset 0 4px 6px rgba(255, 255, 255, 0.1)",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5), inset 0 4px 6px rgba(255, 255, 255, 0.1)",
               clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             }}
           >
-            <div
-              className={`absolute bottom-0 left-0 right-0 flex justify-center items-center h-16 ${sponsor.color} rounded-b-xl`}
-            >
-              <p className="text-white font-semibold font-[Genos] text-xl">
+            <div className={`absolute bottom-0 left-0 right-0 flex justify-center items-center h-14 ${sponsor.color} rounded-b-xl`}>
+              <p className="text-white font-semibold font-[Genos] text-lg">
                 {sponsor.name}
               </p>
             </div>
           </motion.div>
         ))}
       </div>
+
       <style jsx>{`
-        /* Phone View (Below 500px) */
         @media (max-width: 500px) {
           .hero3-container {
-            width: 150%;
-            height: 200%;
+            width: 100%;
+            height: auto;
           }
         }
       `}</style>
