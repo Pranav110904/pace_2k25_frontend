@@ -4,12 +4,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import cricket from "../assets/cricket2.png";
-
+import football from "../assets/football.png";
+import volleyball from "../assets/volley.png";
+import basketball from "../assets/basket.png";
 const events = [
   {
     id: 1,
     title: "VOLLEYBALL",
-    image: cricket,
+    image: volleyball,
     categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
     prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
     bgGradient:
@@ -27,7 +29,7 @@ const events = [
   {
     id: 3,
     title: "FOOTBALL",
-    image: cricket,
+    image: football,
     categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
     prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
     bgGradient:
@@ -36,7 +38,7 @@ const events = [
   {
     id: 4,
     title: "BASKETBALL",
-    image: cricket,
+    image: basketball,
     categories: ["ENTRY FEE/ TEAM", "", "MEN", "WOMEN"],
     prices: ["", "", "", "", "", "", "₹499/-", "₹499/-"],
     bgGradient:
@@ -146,7 +148,7 @@ function EventSlider() {
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-50 h-auto mb-12 object-contain"
+                  className="w-[250px] h-[250px] object-contain mb-8 rounded-md"
                 />
 
                 {/* Event Details */}

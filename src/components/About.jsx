@@ -42,7 +42,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-black text-white px-10 py-16  hero2-container relative overflow-hidden">
+    <section id="about-section" className="bg-black text-white px-10 py-16  hero2-container relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <h2
           ref={headingRef}
