@@ -43,8 +43,8 @@ const Footer = () => {
         <style jsx>{`
         @media (max-width: 500px) {
           .hero3-container {
-            width: 100%;
-            height: auto;
+            width: 150%;
+            height: 200%;
           }
         }
       `}</style>

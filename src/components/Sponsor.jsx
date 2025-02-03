@@ -57,6 +57,15 @@ const Sponsors = () => {
           </motion.div>
         ))}
       </div>
+      <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero3-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </div>
   );
 };
