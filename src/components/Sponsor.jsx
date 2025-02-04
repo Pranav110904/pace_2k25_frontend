@@ -22,7 +22,7 @@ const Sponsors = () => {
     { name: "US Scholar Study", color: "bg-green-500", image: study },
 
   ];
-
+ 
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.5,
