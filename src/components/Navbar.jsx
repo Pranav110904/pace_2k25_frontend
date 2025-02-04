@@ -1,74 +1,80 @@
-import React, { useState, useEffect, useRef } from "react";
-import Hamburger from "/icon-menu.svg";
-import Close from "/icon-close-menu.svg";
-import autoAnimate from "@formkit/auto-animate";
-import MobileNavbar from "./MobileNavbar";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react"; // Icons
+import MobileNavbar from "./MobileNavbar"; 
+import brochure from "../assets/brochure.pdf"
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const parent = useRef(null);
+  const navigate = useNavigate();
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  useEffect(() => {
-    parent.current && autoAnimate(parent.current);
-  }, [parent]);
+  const toggleMobileMenu = () => {
+    setIsMobileOpen(!isMobileOpen);
+  };
 
-  const handleMenu = () => {
-    setToggleMenu(!toggleMenu);
+  const handleScrollToAbout = () => {
+    const aboutSection = document.getElementById("about-section");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <div className="">
-      <div className="container relative py-5 bg-transparent">
-        <nav className="flex items-center justify-between bg-transparent">
-          {/* Logo */}
-          <h1 className="text-2xl font-bold cursor-pointer text-white ml-4">
+    <div className="bg-black w-full hero7-container relative">
+      <div className="container mx-auto py-5 px-4">
+        {/* Desktop Navbar */}
+        <nav className="flex items-center justify-between flex-col lg:flex-row">
+          <h1 className="text-2xl font-bold text-white cursor-pointer mb-4 lg:mb-0">
             AIT SPORTS CLUB
           </h1>
-          
-          {/* Centered Nav Items */}
-          <div className="flex items-center justify-center gap-10">
-            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
-              Brochure
-            </p>
-            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
-              Rulebook
-            </p>
-            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
-              Team
-            </p>
-            <p className="hidden text-sm font-medium duration-75 cursor-pointer md:block text-MediumGray hover:text-AlmostBlack">
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-8">
+          <a href={brochure} className="text-lg text-white hover:text-gray-300" download>
+          Brochure
+        </a>
+            <a href="#" className="text-xl text-white hover:text-gray-300">Rulebook</a>
+            <span className="text-white">|</span>
+            <a href="#" className="text-xl text-white hover:text-gray-300" onClick={handleScrollToAbout}>
+              About
+            </a>
+
+            <a href="https://linktr.ee/PACE2K25" className="text-xl text-white hover:text-gray-300">
               Contact Us
-            </p>
+            </a>
           </div>
 
-          {/* Register Button */}
-          <div className="flex gap-10 mr-4">
-            <button className="hidden px-4 py-2 text-sm duration-75 border-2 rounded-lg md:block border-white text-MediumGray hover:text-AlmostBlack hover:border-white">
+          {/* Desktop Register Button */}
+          <div className="hidden lg:flex">
+            <button
+              className="px-4 py-2 text-sm border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
+              onClick={() => navigate("/register")}
+            >
               Register Now
             </button>
           </div>
-
-          {/* Mobile menu */}
-          <div className="md:hidden">
-            <div className="absolute top-0 z-50 text-2xl right-5" ref={parent}>
-              <div onClick={handleMenu}>
-                {toggleMenu ? <img src={Close} /> : <img src={Hamburger} />}
-              </div>
-            </div>
-
-            {/* Mobile navbar */}
-            <div className="absolute right-0 top-5">
-              {toggleMenu ? (
-                <>
-                  <MobileNavbar />
-                </>
-              ) : (
-                ""
-              )}
-            </div>
-          </div>
         </nav>
       </div>
+
+      {/* Mobile Menu Button (Positioned to the right side) */}
+      <button 
+        className="lg:hidden text-white absolute top-5 right-5 z-50" 
+        onClick={toggleMobileMenu}
+      >
+        {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Mobile Navbar (Imported Component) */}
+      <MobileNavbar isMobileOpen={isMobileOpen} />
+      <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero7-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

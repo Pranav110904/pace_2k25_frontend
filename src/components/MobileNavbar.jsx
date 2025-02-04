@@ -1,37 +1,39 @@
-import { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import brochure from "../assets/brochure.pdf"
 
-
-const MobileNavbar = () => {
-
-  const [mobileCompany, setMobileCompany] = useState(false);
-
-  const handleCompanyDropDown = () => {
-    setMobileCompany(!mobileCompany);
-  };
+const MobileNavbar = ({ isMobileOpen }) => {
+  const navigate = useNavigate();
 
   return (
-    <>
-      <div className="w-[200px] h-screen bg-transparent py-20 px-5 flex flex-col gap-5">
-        <div onClick={handleCompanyDropDown}></div>
-        <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
-          Brochure
-        </p>
-        <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
-          Rulebook
-        </p>
+    <div
+      className={`fixed top-0 left-0 w-full h-full bg-black text-white flex flex-col items-center justify-center gap-6 transform ${
+        isMobileOpen ? "translate-x-0" : "-translate-x-full"
+      } transition-transform duration-300 ease-in-out z-40`}
+    >
+     <a href={brochure} className="text-lg text-white hover:text-gray-300" download>
+  Brochure
+</a>
 
-        <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
-          Team
-        </p>
-
-        <p className="font-medium text-lg text-MediumGray hover:text-AlmostBlack duration-75">
-          Contact Us
-        </p>
-        <button className="text-sm border-2 border-MediumGray py-1 px-3 text-MediumGray rounded-lg">
-          Register
-        </button>
-      </div>
-    </>
+      <a href="#" className="text-lg text-white hover:text-gray-300">
+        Rulebook
+      </a>
+      <a href="#" className="text-lg text-white hover:text-gray-300">
+        Team
+      </a>
+      <a
+        href="https://linktr.ee/PACE2K25"
+        className="text-lg text-white hover:text-gray-300"
+      >
+        Contact Us
+      </a>
+      <button
+        className="px-4 py-2 text-sm border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
+        onClick={() => navigate("/register")}
+      >
+        Register Now
+      </button>
+    </div>
   );
 };
 
