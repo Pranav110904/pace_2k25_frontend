@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icons
 import MobileNavbar from "./MobileNavbar"; 
+import brochure from "../assets/brochure.pdf"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -29,14 +30,16 @@ const Navbar = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-8">
-            <a href="#" className="text-xl text-white hover:text-gray-300">Brochure</a>
+          <a href={brochure} className="text-lg text-white hover:text-gray-300" download>
+          Brochure
+        </a>
             <a href="#" className="text-xl text-white hover:text-gray-300">Rulebook</a>
             <span className="text-white">|</span>
             <a href="#" className="text-xl text-white hover:text-gray-300" onClick={handleScrollToAbout}>
               About
             </a>
 
-            <a href="https://linktr.ee/pace2025" className="text-xl text-white hover:text-gray-300">
+            <a href="https://linktr.ee/PACE2K25" className="text-xl text-white hover:text-gray-300">
               Contact Us
             </a>
           </div>

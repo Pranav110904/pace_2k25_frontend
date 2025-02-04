@@ -110,7 +110,7 @@ const events = [
 
 function EventSlider() {
   return (
-    <div className="min-h-screen bg-black p-8 flex flex-col items-center">
+    <div className="min-h-screen bg-black p-8 hero8-container flex flex-col items-center">
       <h1 className="items-center text-5xl font-bold text-white mb-8">MAJOR EVENTS</h1>
 
       <Swiper
@@ -184,6 +184,16 @@ function EventSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <style jsx>{`
+        /* Phone View (Below 500px) */
+        @media (max-width: 500px) {
+          .hero8-container {
+            width: 150%;
+            height: 200%;
+          }
+        }
+      `}</style>
+
     </div>
   );
 }

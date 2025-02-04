@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import brochure from "../assets/brochure.pdf"
 
 const MobileNavbar = ({ isMobileOpen }) => {
   const navigate = useNavigate();
@@ -10,9 +11,10 @@ const MobileNavbar = ({ isMobileOpen }) => {
         isMobileOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out z-40`}
     >
-      <a href="#" className="text-lg text-white hover:text-gray-300">
-        Brochure
-      </a>
+     <a href={brochure} className="text-lg text-white hover:text-gray-300" download>
+  Brochure
+</a>
+
       <a href="#" className="text-lg text-white hover:text-gray-300">
         Rulebook
       </a>
@@ -20,7 +22,7 @@ const MobileNavbar = ({ isMobileOpen }) => {
         Team
       </a>
       <a
-        href="https://linktr.ee/pace2025"
+        href="https://linktr.ee/PACE2K25"
         className="text-lg text-white hover:text-gray-300"
       >
         Contact Us

@@ -20,54 +20,42 @@ const Sponsors = () => {
   });
 
   return (
-    <div ref={ref} className="bg-black text-white py-10 px-4 w-full">
+    <div
+      ref={ref}
+      className="bg-black text-white hero3-container py-10 px-4 w-full"
+    >
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: inView ? 0 : -100, opacity: inView ? 1 : 0 }}
         transition={{ duration: 1 }}
-        className="text-center text-5xl font-bold font-[Genos] mb-8"
+        className="text-center text-3xl sm:text-5xl font-bold font-[Genos] mb-8"
       >
         PREVIOUS SPONSORS
       </motion.h2>
 
       {/* Sponsor Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full px-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full px-2 sm:px-4">
         {sponsors.map((sponsor, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, delay: index * 0.2, ease: "easeInOut" }}
-            className="relative w-full flex flex-col items-center rounded-2xl shadow-lg bg-gray-900"
+            className="relative w-full flex flex-col items-center rounded-xl shadow-md bg-gray-900"
           >
-            {/* Sponsor Image */}
-            <div className="w-full h-48 bg-black flex justify-center items-center rounded-t-2xl overflow-hidden">
-              <img src={sponsor.image} alt={sponsor.name} className="w-3/4 h-3/4 object-contain" />
+            <div className="w-full h-32 sm:h-40 bg-black flex justify-center items-center rounded-t-xl overflow-hidden">
+              <img
+                src={sponsor.image}
+                alt={sponsor.name}
+                className="w-2/3 h-2/3 object-contain"
+              />
             </div>
-
-            {/* Sponsor Name Section */}
-            <div className={`w-full h-12 flex justify-center items-center ${sponsor.color} rounded-b-2xl`}>
-              <p className="text-white font-bold uppercase">{sponsor.name}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-8">
-        {sponsors.map((sponsor, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.8, delay: index * 0.2, ease: "easeInOut" }}
-            className="relative h-60 sm:h-52 md:h-64 w-full flex flex-col justify-end rounded-2xl shadow-lg bg-gradient-to-br from-gray-900 to-black"
-            style={{
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5), inset 0 4px 6px rgba(255, 255, 255, 0.1)",
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            }}
-          >
-            <div className={`absolute bottom-0 left-0 right-0 flex justify-center items-center h-14 ${sponsor.color} rounded-b-xl`}>
-              <p className="text-white font-semibold font-[Genos] text-lg">{sponsor.name}</p>
+            <div
+              className={`w-full h-8 sm:h-10 flex justify-center items-center ${sponsor.color} rounded-b-xl`}
+            >
+              <p className="text-white font-bold uppercase text-xs sm:text-sm">
+                {sponsor.name}
+              </p>
             </div>
           </motion.div>
         ))}
