@@ -7,7 +7,7 @@ import budani from "../assets/budhanibros.png";
 import campus from "../assets/campus.png";
 import uncle from "../assets/uncle (1)-Recovered.png";
 import decat from "../assets/Decathlon_Logo24.svg.png";
-import food from "../assets/thefoodboothh-20250203-0001-removebg-preview.png";
+import techno from "../assets/techno.png";
 import study from "../assets/uscholarsstudyabroad-20250203-0001-removebg-preview.png";
 
 const Sponsors = () => {
@@ -18,7 +18,7 @@ const Sponsors = () => {
     { name: "Campus Times", color: "bg-green-500", image: campus },
     { name: "Decathlon", color: "bg-blue-500", image: decat },
     { name: "Uncle`s Kitchen", color: "bg-red-500", image: uncle },
-    { name: "The Food Booth", color: "bg-yellow-500", image: food },
+    { name: "Techno Sport", color: "bg-yellow-500", image: techno },
     { name: "US Scholar Study", color: "bg-green-500", image: study },
 
   ];
