@@ -24,22 +24,22 @@ const Navbar = () => {
       <div className="container mx-auto py-5 px-4">
         {/* Desktop Navbar */}
         <nav className="flex items-center justify-between flex-col lg:flex-row">
-          <h1 className="text-2xl font-bold text-white cursor-pointer mb-4 lg:mb-0">
+          <h1 className="text-2xl font-bold font-[Genos] text-white cursor-pointer mb-4 lg:mb-0">
             AIT SPORTS CLUB
           </h1>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-8">
-          <a href={brochure} className="text-lg text-white hover:text-gray-300" download>
+          <a href={brochure} className="text-lg font-[Genos] text-white hover:text-gray-300" download>
           Brochure
         </a>
-            <a href="#" className="text-xl text-white hover:text-gray-300">Rulebook</a>
+            <a href="#" className="text-xl font-[Genos] text-white hover:text-gray-300">Rulebook</a>
             <span className="text-white">|</span>
-            <a href="#" className="text-xl text-white hover:text-gray-300" onClick={handleScrollToAbout}>
+            <a href="#" className="text-xl font-[Genos] text-white hover:text-gray-300" onClick={handleScrollToAbout}>
               About
             </a>
 
-            <a href="https://linktr.ee/PACE2K25" className="text-xl text-white hover:text-gray-300">
+            <a href="https://linktr.ee/PACE2K25" className="text-xl font-[Genos] text-white hover:text-gray-300">
               Contact Us
             </a>
           </div>
@@ -47,7 +47,7 @@ const Navbar = () => {
           {/* Desktop Register Button */}
           <div className="hidden lg:flex">
             <button
-              className="px-4 py-2 text-sm border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
+              className="px-4 py-2 text-sm font-[Genos] border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
               onClick={() => navigate("/register")}
             >
               Register Now

@@ -111,7 +111,7 @@ const events = [
 function EventSlider() {
   return (
     <div className="min-h-screen bg-black p-8 hero8-container flex flex-col items-center">
-      <h1 className="items-center text-5xl font-bold text-white mb-8">MAJOR EVENTS</h1>
+      <h1 className="items-center text-5xl font-[Genos] font-bold text-white mb-8">MAJOR EVENTS</h1>
 
       <Swiper
         effect={"coverflow"}
@@ -146,7 +146,7 @@ function EventSlider() {
               <div className="relative z-10 flex flex-col items-center h-full p-8">
                 {/* Event Title with dynamic color */}
                 <h2
-                  className="text-4xl font-bold mb-8"
+                  className="text-4xl font-[Genos] font-bold mb-8"
                   style={{ color: getTitleColor(event.bgGradient) }}
                 >
                   {event.title}
@@ -161,12 +161,12 @@ function EventSlider() {
 
                 {/* Event Details */}
                 <div className="w-full space-y-4 mb-auto">
-                  <div className="flex justify-between items-center text-white text-xl">
+                  <div className="flex justify-between items-center font-[Genos] font-bold text-white text-xl">
                     {event.categories.map((category, index) => (
                       <span key={index}>{category}</span>
                     ))}
                   </div>
-                  <div className="flex justify-between items-center text-white text-xl">
+                  <div className="flex justify-between items-center font-[Genos] text-white text-xl">
                     {event.prices.map((price, index) => (
                       <span key={index}>{price}</span>
                     ))}
@@ -175,7 +175,7 @@ function EventSlider() {
 
                 {/* Button with #AE5201 Background */}
                 <div className="absolute bottom-5 left-0 right-0 flex justify-center">
-                  <button className="bg-[#AE5201] hover:bg-[#924401] text-white px-8 py-3 rounded-md text-lg transition-colors">
+                  <button className="bg-[#AE5201] hover:bg-[#924401] text-white font-[Genos] px-8 py-3 rounded-md text-lg transition-colors">
                     Event Details →
                   </button>
                 </div>

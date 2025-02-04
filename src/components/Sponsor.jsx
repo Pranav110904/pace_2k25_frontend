@@ -5,6 +5,10 @@ import udchalo from "../assets/udchalo.png";
 import yogi from "../assets/yogi-motors.png";
 import budani from "../assets/budhanibros.png";
 import campus from "../assets/campus.png";
+import uncle from "../assets/uncle (1)-Recovered.png";
+import decat from "../assets/Decathlon_Logo24.svg.png";
+import food from "../assets/thefoodboothh-20250203-0001-removebg-preview.png";
+import study from "../assets/uscholarsstudyabroad-20250203-0001-removebg-preview.png";
 
 const Sponsors = () => {
   const sponsors = [
@@ -12,6 +16,11 @@ const Sponsors = () => {
     { name: "Yogi Motors", color: "bg-red-500", image: yogi },
     { name: "Budhani Bros", color: "bg-yellow-500", image: budani },
     { name: "Campus Times", color: "bg-green-500", image: campus },
+    { name: "Decathlon", color: "bg-blue-500", image: decat },
+    { name: "Uncle`s Kitchen", color: "bg-red-500", image: uncle },
+    { name: "The Food Booth", color: "bg-yellow-500", image: food },
+    { name: "US Scholar Study", color: "bg-green-500", image: study },
+
   ];
 
   const { ref, inView } = useInView({
@@ -22,20 +31,20 @@ const Sponsors = () => {
   return (
     <div
       ref={ref}
-      className="bg-black text-white hero3-container py-10 px-4 w-full"
+      className="bg-black font-[Genos] text-white hero3-container py-10 px-4 w-full"
     >
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: inView ? 0 : -100, opacity: inView ? 1 : 0 }}
         transition={{ duration: 1 }}
-        className="text-center text-3xl sm:text-5xl font-bold font-[Genos] mb-8"
+        className="text-center sm:text-5xl font-bold font-[Genos] mb-8"
       >
         PREVIOUS SPONSORS
       </motion.h2>
 
       {/* Sponsor Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full px-2 sm:px-4">
-        {sponsors.map((sponsor, index) => (
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 gap-y-20 w-full px-2 sm:px-4">
+      {sponsors.map((sponsor, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -53,13 +62,14 @@ const Sponsors = () => {
             <div
               className={`w-full h-8 sm:h-10 flex justify-center items-center ${sponsor.color} rounded-b-xl`}
             >
-              <p className="text-white font-bold uppercase text-xs sm:text-sm">
+              <p className="text-white uppercase sm:text-lg">
                 {sponsor.name}
               </p>
             </div>
           </motion.div>
         ))}
       </div>
+      
 
       <style jsx>{`
         @media (max-width: 500px) {
