@@ -12,6 +12,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "@tailwindcss/vite": "^4.0.2",
+    "axios": "^1.7.9",
     "framer": "^2.4.1",
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.474.0",
