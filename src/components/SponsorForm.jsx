@@ -11,13 +11,14 @@ const SponsorForm = () => {
 
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const validateForm = () => {
     let newErrors = {};
 
     if (!formData.companyName.trim()) newErrors.companyName = "Company Name is required";
     if (!formData.yourName.trim()) newErrors.yourName = "Your Name is required";
-    
+
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = "Phone Number is required";
     } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
@@ -42,6 +43,7 @@ const SponsorForm = () => {
     e.preventDefault();
     if (!validateForm()) return; // Stop if validation fails
 
+    setLoading(true);
     const apiUrl = "https://pace-2025.onrender.com/api/v1/pace2025/sendEmail";
 
     try {
@@ -60,6 +62,8 @@ const SponsorForm = () => {
     } catch (error) {
       setMessage("An error occurred. Please try again.");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -71,7 +75,13 @@ const SponsorForm = () => {
   }, [message]);
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen hero9-container bg-black px-4 py-10">
+    <div className="flex flex-col justify-center items-center min-h-screen hero9-container bg-black px-4 py-10 relative">
+      {loading && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+          <div className="loader"></div>
+        </div>
+      )}
+
       {/* Title */}
       <h2 className="text-4xl md:text-6xl font-bold text-white mb-2 text-center font-[Genos]">WANT TO</h2>
       <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center font-[Genos]">SPONSOR US</h2>
@@ -131,12 +141,12 @@ const SponsorForm = () => {
             <button
               type="submit"
               className="bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold px-6 py-2 rounded-md shadow-md transition-all hover:scale-105"
+              disabled={loading}
             >
               SUBMIT FORM
             </button>
           </div>
         </form>
-        
       </div>
 
       {/* Snackbar */}
@@ -145,6 +155,7 @@ const SponsorForm = () => {
           {message}
         </div>
       )}
+
       <style jsx>{`
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
@@ -153,9 +164,24 @@ const SponsorForm = () => {
             height: 200%;
           }
         }
-      `}</style>
+
+        .loader {
+          border: 8px solid #f3f3f3;
+          border-top: 8px solid #3498db;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 };
 
 export default SponsorForm;
+  
