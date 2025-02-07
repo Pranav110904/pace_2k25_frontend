@@ -21,7 +21,7 @@ const Home = () => {
       <div className="mb-16">
         <EventSlider />
       </div>
-      <div className="mb-25">
+      <div className="mb-0">
         <Sponsors />
       </div>
       <div className="mb-16">

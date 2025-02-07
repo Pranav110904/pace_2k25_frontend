@@ -13,6 +13,7 @@ import badminton from "../assets/badminton.png";
 import chess from "../assets/chess.png";
 import kabaddi from "../assets/kabaddi.png";
 import cricket from "../assets/cricket2.png";
+import pace from "../assets/pace2025.pdf";
 
 const events = [
   {
@@ -20,7 +21,7 @@ const events = [
     title: "VOLLEYBALL",
     image: volley,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["","","","", "₹2000/-", "₹1400/-"],
+    prices: ["", "", "", "", "₹2000/-", "₹1400/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -28,8 +29,8 @@ const events = [
     id: 2,
     title: "KABADDI",
     image: kabaddi,
-    categories: ["ENTRY FEE","MEN"],
-    prices: ["","","₹2000/-"],
+    categories: ["ENTRY FEE", "MEN"],
+    prices: ["", "", "₹2000/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -37,8 +38,8 @@ const events = [
     id: 3,
     title: "FOOTBALL",
     image: football,
-    categories: ["ENTRY FEE", "","MEN-6", "MEN-11", "WOMEN"],
-    prices: ["","","","","", "₹1500/-", "₹3000/-","₹1000/-"],
+    categories: ["ENTRY FEE", "", "MEN-6", "MEN-11", "WOMEN"],
+    prices: ["", "", "", "", "", "₹1500/-", "₹3000/-", "₹1000/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -47,7 +48,7 @@ const events = [
     title: "BASKETBALL",
     image: basketball,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["","","","", "₹2500/-", "₹1500/-"],
+    prices: ["", "", "", "", "₹2500/-", "₹1500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -56,17 +57,16 @@ const events = [
     title: "CRICKET",
     image: cricket,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["","","","", "₹3500/-", "₹1500/-"],
+    prices: ["", "", "", "", "₹3500/-", "₹1500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
-    
   },
   {
     id: 6,
     title: "SQUASH",
     image: squash,
-    categories: ["ENTRY FEE", "", "MEN-S", "WOMEN-S","MEN-D"],
-    prices: ["","","","","₹300/-", "₹300/-", "₹600/-"],
+    categories: ["ENTRY FEE", "", "MEN-S", "WOMEN-S", "MEN-D"],
+    prices: ["", "", "", "", "₹300/-", "₹300/-", "₹600/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -75,7 +75,7 @@ const events = [
     title: "LAWN TENNIS",
     image: lawnTennis,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["","","", "₹400/-", "₹200/-"],
+    prices: ["", "", "", "₹400/-", "₹200/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -84,7 +84,7 @@ const events = [
     title: "TABLE TENNIS",
     image: tableTennis,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["","","", "₹800/-", "₹600/-"],
+    prices: ["", "", "", "₹800/-", "₹600/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -93,7 +93,7 @@ const events = [
     title: "BADMINTON",
     image: badminton,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN", "MIXED"],
-    prices: ["","","","","","", "₹1300/-", "₹900/-", "₹500/-"],
+    prices: ["", "", "", "", "", "", "₹1300/-", "₹900/-", "₹500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -102,16 +102,27 @@ const events = [
     title: "CHESS",
     image: chess,
     categories: ["ENTRY FEE", "", "MEN-T", "WOMEN-I"],
-    prices: ["","","", "₹600/-", "₹100/-"],
+    prices: ["", "", "", "₹600/-", "₹100/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
 ];
 
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = "../assets/Rulebook.pdf"; // Adjust the path if needed
+  link.download = "Rulebook.pdf"; // The filename for the downloaded file
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 function EventSlider() {
   return (
     <div className="min-h-screen bg-black p-8 hero8-container flex flex-col items-center">
-      <h1 className="items-center text-5xl font-[Genos] font-bold text-white mb-8">MAJOR EVENTS</h1>
+      <h1 className="items-center text-5xl font-[Genos] font-bold text-white mb-8">
+        MAJOR EVENTS
+      </h1>
 
       <Swiper
         effect={"coverflow"}
@@ -175,9 +186,13 @@ function EventSlider() {
 
                 {/* Button with #AE5201 Background */}
                 <div className="absolute bottom-5 left-0 right-0 flex justify-center">
-                  <button className="bg-[#AE5201] hover:bg-[#924401] text-white font-[Genos] px-8 py-3 rounded-md text-lg transition-colors">
+                  <button
+                    className="bg-[#AE5201] hover:bg-[#924401] text-white font-[Genos] px-8 py-3 rounded-md text-lg transition-colors"
+                    onClick={handleDownload}
+                  >
                     Event Details →
                   </button>
+                  ;
                 </div>
               </div>
             </div>
@@ -193,7 +208,6 @@ function EventSlider() {
           }
         }
       `}</style>
-
     </div>
   );
 }

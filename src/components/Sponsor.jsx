@@ -34,7 +34,7 @@ const Sponsors = () => {
       className="bg-black font-[Genos] text-white hero3-container py-10 px-4 w-full"
     >
       <motion.h2
-        initial={{ x: -100, opacity: 0 }}
+        initial={{ x: -100, opacity: 0}}
         animate={{ x: inView ? 0 : -100, opacity: inView ? 1 : 0 }}
         transition={{ duration: 1 }}
         className="text-center sm:text-5xl font-bold font-[Genos] mb-8"

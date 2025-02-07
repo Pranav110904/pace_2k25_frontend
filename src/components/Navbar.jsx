@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icons
 import MobileNavbar from "./MobileNavbar"; 
 import brochure from "../assets/brochure.pdf"
-import pace from "../assets/FRONT PAGE_merged.pdf"
+import pace from "../assets/Rulebook.pdf"
 
 const Navbar = () => {
   const navigate = useNavigate();
