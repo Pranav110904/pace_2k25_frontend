@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icons
 import MobileNavbar from "./MobileNavbar"; 
 import brochure from "../assets/brochure.pdf"
+import pace from "../assets/FRONT PAGE_merged.pdf"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,7 +34,9 @@ const Navbar = () => {
           <a href={brochure} className="text-lg font-[Genos] text-white hover:text-gray-300" download>
           Brochure
         </a>
-            <a href="#" className="text-xl font-[Genos] text-white hover:text-gray-300">Rulebook</a>
+         <a href={pace} className="text-lg font-[Genos] text-white hover:text-gray-300" download>
+                   Rulebook
+                 </a>
             <span className="text-white">|</span>
             <a href="#" className="text-xl font-[Genos] text-white hover:text-gray-300" onClick={handleScrollToAbout}>
               About

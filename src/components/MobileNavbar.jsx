@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import brochure from "../assets/brochure.pdf"
+import pace from "../assets/FRONT PAGE_merged.pdf"
 
 const MobileNavbar = ({ isMobileOpen }) => {
   const navigate = useNavigate();
@@ -15,9 +16,9 @@ const MobileNavbar = ({ isMobileOpen }) => {
   Brochure
 </a>
 
-      <a href="#" className="text-lg text-white hover:text-gray-300">
-        Rulebook
-      </a>
+       <a href={pace} className="text-lg font-[Genos] text-white hover:text-gray-300" download>
+                         Rulebook
+                       </a>
       <a href="#" className="text-lg text-white hover:text-gray-300">
         Team
       </a>

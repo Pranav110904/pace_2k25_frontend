@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import home1 from "../assets/about1.png";
-import home2 from "../assets/about2.png";
-import home3 from "../assets/about3.png";
-import home4 from "../assets/about4.png";
+import home1 from "../assets/diro1.jpg";
+import home2 from "../assets/foot.jpg";
+import home3 from "../assets/gitlvoly.jpg";
+import home4 from "../assets/team.jpg";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +42,10 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about-section" className="bg-black text-white px-10 py-16  hero2-container relative overflow-hidden">
+    <section
+      id="about-section"
+      className="bg-black text-white px-10 py-16  hero2-container relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
         <h2
           ref={headingRef}
