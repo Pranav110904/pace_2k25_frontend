@@ -68,7 +68,7 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Navbar (Imported Component) */}
-      <MobileNavbar isMobileOpen={isMobileOpen} />
+      <MobileNavbar isMobileOpen={isMobileOpen} setIsMobileOpen={setIsMobileOpen} />
       <style jsx>{`
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
