@@ -13,7 +13,7 @@ import badminton from "../assets/badminton.png";
 import chess from "../assets/chess.png";
 import kabaddi from "../assets/kabaddi.png";
 import cricket from "../assets/cricket2.png";
-import pace from "../assets/pace2025.pdf";
+import pace from "../assets/Rulebook.pdf";
 
 const events = [
   {
@@ -108,15 +108,6 @@ const events = [
   },
 ];
 
-const handleDownload = () => {
-  const link = document.createElement("a");
-  link.href = "../assets/Rulebook.pdf"; // Adjust the path if needed
-  link.download = "Rulebook.pdf"; // The filename for the downloaded file
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
 function EventSlider() {
   return (
     <div className="min-h-screen bg-black p-8 hero8-container flex flex-col items-center">
@@ -186,13 +177,13 @@ function EventSlider() {
 
                 {/* Button with #AE5201 Background */}
                 <div className="absolute bottom-5 left-0 right-0 flex justify-center">
-                  <button
+                  <a
+                    href={pace}
                     className="bg-[#AE5201] hover:bg-[#924401] text-white font-[Genos] px-8 py-3 rounded-md text-lg transition-colors"
-                    onClick={handleDownload}
+                    download
                   >
                     Event Details →
-                  </button>
-                  ;
+                  </a>
                 </div>
               </div>
             </div>
