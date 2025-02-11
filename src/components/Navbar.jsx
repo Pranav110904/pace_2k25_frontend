@@ -73,8 +73,8 @@ const Navbar = () => {
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
           .hero7-container {
-            width: 150%;
-            height: 200%;
+            width: 100%;
+            height: 10vh;
           }
         }
       `}</style>

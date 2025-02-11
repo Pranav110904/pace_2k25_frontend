@@ -160,8 +160,8 @@ const SponsorForm = () => {
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
           .hero9-container {
-            width: 150%;
-            height: 200%;
+            width: 100%;
+            height: 0vh;
           }
         }
 

@@ -21,7 +21,7 @@ const events = [
     title: "VOLLEYBALL",
     image: volley,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "₹2000/-", "₹1400/-"],
+    prices: ["", "", "", "", "₹2500/-", "₹1500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -30,7 +30,7 @@ const events = [
     title: "KABADDI",
     image: kabaddi,
     categories: ["ENTRY FEE", "MEN"],
-    prices: ["", "", "₹2000/-"],
+    prices: ["", "", "₹2500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -39,7 +39,7 @@ const events = [
     title: "FOOTBALL",
     image: football,
     categories: ["ENTRY FEE", "", "MEN-6", "MEN-11", "WOMEN"],
-    prices: ["", "", "", "", "", "₹1500/-", "₹3000/-", "₹1000/-"],
+    prices: ["", "", "", "", "", "₹2000/-", "₹3500/-", "₹1500/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -57,7 +57,7 @@ const events = [
     title: "CRICKET",
     image: cricket,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "", "₹3500/-", "₹1500/-"],
+    prices: ["", "", "", "", "₹4500/-", "₹999/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -83,8 +83,8 @@ const events = [
     id: 8,
     title: "TABLE TENNIS",
     image: tableTennis,
-    categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
-    prices: ["", "", "", "₹800/-", "₹600/-"],
+    categories: ["MEN", "WOMEN","MEN-T","WOMEN-T"],
+    prices: ["₹300/-","₹200/-","800","500"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -92,8 +92,8 @@ const events = [
     id: 9,
     title: "BADMINTON",
     image: badminton,
-    categories: ["ENTRY FEE", "", "MEN", "WOMEN", "MIXED"],
-    prices: ["", "", "", "", "", "", "₹1300/-", "₹900/-", "₹500/-"],
+    categories: ["MEN", "WOMEN", "MIXED","MEN-T","WOMEN-T",],
+    prices: ["₹300/-", "₹200/-", "₹500/-","1000","700"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -102,7 +102,7 @@ const events = [
     title: "CHESS",
     image: chess,
     categories: ["ENTRY FEE", "", "MEN-T", "WOMEN-I"],
-    prices: ["", "", "", "₹600/-", "₹100/-"],
+    prices: ["", "", "", "₹500/-", "₹100/-"],
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -194,8 +194,8 @@ function EventSlider() {
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
           .hero8-container {
-            width: 150%;
-            height: 200%;
+            width: 100%;
+            height: 120vh;
           }
         }
       `}</style>

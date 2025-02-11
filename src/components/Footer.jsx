@@ -56,8 +56,9 @@ const Footer = () => {
 
            @media (max-width: 500px) {
             .hero3-container {
-              width: 150%;
-              height: 200%;
+              width: 100%;
+              height: 20vh;
+              {/* bottom: 0; */}
             }
           }
         `}</style>

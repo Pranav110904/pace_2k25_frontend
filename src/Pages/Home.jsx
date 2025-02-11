@@ -4,24 +4,24 @@ import About from "../components/About";
 import Sponsors from "../components/Sponsor";
 import SponsorForm from "../components/SponsorForm";
 import EventSlider from "../components/EventSlider";
-import Countdown from '../components/Countdown';
+import Countdown from "../components/Countdown";
 
 const Home = () => {
   return (
     <>
-      <div className="mb-16">
+      <div className="mb-10">
         <Hero />
       </div>
-      <div className="mb-16">
+      <div className="mb-25">
         <About />
       </div>
       <div className="mb-25">
         <Countdown />
       </div>
-      <div className="mb-16">
+      <div className="mb-25">
         <EventSlider />
       </div>
-      <div className="mb-0">
+      <div className="mb-200 md:mb-25">
         <Sponsors />
       </div>
       <div className="mb-16">

@@ -103,8 +103,8 @@ const Hero = () => {
 
         @media (max-width: 500px) {
           .hero-container {
-            width: 150%;
-            height: 200%;
+            width: 100%;
+            height: 100vh;
           }
         }
 
