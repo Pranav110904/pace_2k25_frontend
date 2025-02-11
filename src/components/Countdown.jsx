@@ -52,8 +52,8 @@ const Countdown = () => {
         /* Phone View (Below 500px) */
         @media (max-width: 500px) {
           .hero5-container {
-            width: 100%;
-            height: 100vh;
+            width: 150%;
+            height: 200%;
           }
         }
       `}</style>

@@ -103,9 +103,12 @@ const Hero = () => {
 
         @media (max-width: 500px) {
           .hero-container {
-            width: 100%;
+            width: 150vw;
             height: 100vh;
+            overflow: hidden; /* Extra content hide karne ke liye */
+    position: relative;
           }
+
         }
 
         .gradient-border {

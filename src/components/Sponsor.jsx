@@ -75,7 +75,7 @@ const Sponsors = () => {
         @media (max-width: 500px) {
           .hero3-container {
             width: 100%;
-            height: 100vh;
+            height: auto;
           }
         }
       `}</style>
