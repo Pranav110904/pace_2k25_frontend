@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icons
 import MobileNavbar from "./MobileNavbar"; 
-import brochure from "../assets/brochure.pdf"
-import pace from "../assets/Rulebook.pdf"
+import brochure from "../assets/pace2025brochure.pdf"
+import pace from "../assets/rulebook.pdf"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -49,13 +49,16 @@ const Navbar = () => {
 
           {/* Desktop Register Button */}
           <div className="hidden lg:flex">
-            <button
-              className="px-4 py-2 text-sm font-[Genos] border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
-              onClick={() => navigate("/register")}
-            >
-              Register Now
-            </button>
-          </div>
+  <a
+    href="https://unstop.com/college-fests/pace-2025-army-institute-of-technology-ait-pune-328040"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-4 py-2 text-sm font-[Genos] border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
+  >
+    Register Now
+  </a>
+</div>
+
         </nav>
       </div>
 

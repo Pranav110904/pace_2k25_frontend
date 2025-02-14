@@ -1,5 +1,5 @@
 import React from 'react';
-import brochure from "../assets/brochure.pdf"
+import brochure from "../assets/pace2025brochure.pdf"
 
 const Footer = () => {
   return (
