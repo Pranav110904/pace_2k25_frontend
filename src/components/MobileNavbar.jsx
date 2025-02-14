@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import brochure from "../assets/pace2025brochure.pdf"
-import pace from "../assets/rulebook.pdf"
+import pace from "../assets/PACE 2025 RULEBOOK.pdf"
 
 const MobileNavbar = ({ isMobileOpen, setIsMobileOpen }) => {
   const navigate = useNavigate();

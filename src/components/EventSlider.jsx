@@ -13,7 +13,7 @@ import badminton from "../assets/badminton.png";
 import chess from "../assets/chess.png";
 import kabaddi from "../assets/kabaddi.png";
 import cricket from "../assets/cricket2.png";
-import pace from "../assets/Rulebook.pdf";
+import pace from "../assets/PACE 2025 RULEBOOK.pdf";
 
 const events = [
   {
