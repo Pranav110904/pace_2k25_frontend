@@ -36,15 +36,14 @@ const MobileNavbar = ({ isMobileOpen, setIsMobileOpen }) => {
       >
         Contact Us
       </a>
-      <button
-        className="px-4 py-2 text-sm border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
-        onClick={() => {
-          setIsMobileOpen(false); // Close navbar
-          navigate("/register"); // Navigate to register page
-        }}
-      >
-        Register Now
-      </button>
+      <a
+    href="https://unstop.com/college-fests/pace-2025-army-institute-of-technology-ait-pune-328040"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-4 py-2 text-sm font-[Genos] border-2 rounded-lg border-white text-white hover:bg-white hover:text-black"
+  >
+    Register Now
+  </a>
     </div>
   );
 };

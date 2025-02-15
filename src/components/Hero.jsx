@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import cricket from "../assets/cricket.png";
 import football from "../assets/football.png";
-import logo from "../assets/paceLogo.png"; 
+import logo from "../assets/paceLogo.png";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,8 +62,14 @@ const Hero = () => {
             PACE
           </h1>
 
-          <button className="relative mt-3 text-xl font-semibold px-16 py-4 rounded-full text-white hover:bg-opacity-80 gradient-border">
-            2024-25
+          <button className="relative mt-3 text-xl font-semibold px-16 py-4 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105">
+            <a
+              href="https://unstop.com/college-fests/pace-2025-army-institute-of-technology-ait-pune-328040"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+            </a>
           </button>
         </div>
 
@@ -106,9 +112,8 @@ const Hero = () => {
             width: 150vw;
             height: 100vh;
             overflow: hidden; /* Extra content hide karne ke liye */
-    position: relative;
+            position: relative;
           }
-
         }
 
         .gradient-border {
@@ -125,8 +130,13 @@ const Hero = () => {
           inset: 0;
           border-radius: inherit;
           padding: 2px;
-          background: linear-gradient(200deg, #80C2FF 10%, rgba(18, 15, 15, 0) 60%);
-          mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+          background: linear-gradient(
+            200deg,
+            #80c2ff 10%,
+            rgba(18, 15, 15, 0) 60%
+          );
+          mask: linear-gradient(white 0 0) content-box,
+            linear-gradient(white 0 0);
           mask-composite: exclude;
           pointer-events: none;
         }
