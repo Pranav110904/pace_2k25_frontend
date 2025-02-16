@@ -14,6 +14,16 @@ import chess from "../assets/chess.png";
 import kabaddi from "../assets/kabaddi.png";
 import cricket from "../assets/cricket2.png";
 import pace from "../assets/PACE 2025 RULEBOOK.pdf";
+import volleyballRulebook from "../assets/Volleyball.pdf";
+import footballRulebook from "../assets/Football.pdf";
+import basketballRulebook from "../assets/Basketball.pdf";
+import squashRulebook from "../assets/Squash.pdf";
+import lawnTennisRulebook from "../assets/Lawn Tennis.pdf";
+import tableTennisRulebook from "../assets/Table Tennis.pdf";
+import badmintonRulebook from "../assets/Badminton.pdf";
+import chessRulebook from "../assets/Chess.pdf";
+import kabaddiRulebook from "../assets/Kabaddi.pdf";
+import cricketRulebook from "../assets/Cricket.pdf";
 const events = [
   {
     id: 1,
@@ -21,6 +31,7 @@ const events = [
     image: volley,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
     prices: ["", "", "", "", "₹2500/-", "₹1500/-"],
+    rulebook: volleyballRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -30,6 +41,7 @@ const events = [
     image: kabaddi,
     categories: ["ENTRY FEE", "MEN"],
     prices: ["", "", "₹2500/-"],
+    rulebook: kabaddiRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -39,6 +51,7 @@ const events = [
     image: football,
     categories: ["ENTRY FEE", "", "MEN-6", "MEN-11", "WOMEN"],
     prices: ["", "", "", "", "", "₹2000/-", "₹3500/-", "₹1500/-"],
+    rulebook: footballRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -48,6 +61,7 @@ const events = [
     image: basketball,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
     prices: ["", "", "", "", "₹2500/-", "₹1500/-"],
+    rulebook: basketballRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -57,6 +71,7 @@ const events = [
     image: cricket,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
     prices: ["", "", "", "", "₹4500/-", "₹999/-"],
+    rulebook: cricketRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -66,6 +81,7 @@ const events = [
     image: squash,
     categories: ["ENTRY FEE", "", "MEN-S", "WOMEN-S", "MEN-D"],
     prices: ["", "", "", "", "₹300/-", "₹300/-", "₹600/-"],
+    rulebook: squashRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -75,6 +91,7 @@ const events = [
     image: lawnTennis,
     categories: ["ENTRY FEE", "", "MEN", "WOMEN"],
     prices: ["", "", "", "₹400/-", "₹200/-"],
+    rulebook: lawnTennisRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 165, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -84,6 +101,7 @@ const events = [
     image: tableTennis,
     categories: ["MEN", "WOMEN","MEN-T","WOMEN-T"],
     prices: ["₹300/-","₹200/-","800","500"],
+    rulebook:tableTennisRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(0, 191, 255, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -93,6 +111,7 @@ const events = [
     image: badminton,
     categories: ["MEN", "WOMEN", "MIXED","MEN-T","WOMEN-T",],
     prices: ["₹300/-", "₹200/-", "₹500/-","1000","700"],
+    rulebook: badmintonRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(10, 79, 80, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -102,6 +121,7 @@ const events = [
     image: chess,
     categories: ["ENTRY FEE", "", "MEN-T", "WOMEN-I"],
     prices: ["", "", "", "₹500/-", "₹100/-"],
+    rulebook: chessRulebook,
     bgGradient:
       "radial-gradient(circle at 75% 80%, rgba(255, 99, 71, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, #000000 100%)",
   },
@@ -176,11 +196,7 @@ function EventSlider() {
 
                 {/* Button with #AE5201 Background */}
                 <div className="absolute bottom-5 left-0 right-0 flex justify-center">
-                  <a
-                    href={pace}
-                    className="bg-[#AE5201] hover:bg-[#924401] text-white font-[Genos] px-8 py-3 rounded-md text-lg transition-colors"
-                    download
-                  >
+                <a href={event.rulebook} className="bg-[#AE5201] hover:bg-[#924401] text-white font-[Genos] px-8 py-3 rounded-md text-lg transition-colors" download>
                     Event Details →
                   </a>
                 </div>
